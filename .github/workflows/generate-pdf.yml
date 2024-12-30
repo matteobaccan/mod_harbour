@@ -9,7 +9,7 @@ jobs:
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     
     - name: Set up Pandoc
       run: sudo apt-get install -y pandoc
@@ -18,7 +18,7 @@ jobs:
       run: pandoc -s README.md -o output.pdf
     
     - name: Upload PDF as artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: output-pdf
         path: output.pdf

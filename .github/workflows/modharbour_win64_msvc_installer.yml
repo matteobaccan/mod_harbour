@@ -15,7 +15,7 @@ jobs:
     
     steps:
     - name: Checkout mod_harbour repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
             
     - name: Build installer
       run: |
@@ -30,7 +30,7 @@ jobs:
     - name: Building the final zip with the installer inside
       env:
          TIME: "${{ steps.current-time.outputs.formattedTime }}"
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
        name: install_win64_${{ env.TIME }}
        path: D:\a\mod_harbour\mod_harbour\windows\win64\setup\Output\modharbour.exe 

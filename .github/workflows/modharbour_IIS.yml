@@ -10,10 +10,10 @@ jobs:
     if: github.actor == github.event.repository.owner.login
     
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       
     - name: Checkout harbour/core repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
        repository: harbour/core
        path: harbour
@@ -73,7 +73,7 @@ jobs:
     - name: Building the final zip with mod_harbour, msvc redistributable and required DLLs inside
       env:
          TIME: "${{ steps.current-time.outputs.formattedTime }}"
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
        name: modharbour_IIS_win64_${{ env.TIME }}
        path: D:\a\mod_harbour\mod_harbour\IIS\bin        

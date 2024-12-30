@@ -2,7 +2,6 @@ name: modharbour Win64 msvc using choco (fast)
 
 on:
   push:
-  workflow_dispatch:
 
 jobs:
   build:
@@ -11,6 +10,8 @@ jobs:
     if: github.actor == github.event.repository.owner.login
     
     steps:
+    - uses: actions/checkout@v4
+         
     - name: Checkout harbour/core repo
       uses: actions/checkout@v4
       with:
